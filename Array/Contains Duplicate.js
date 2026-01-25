@@ -9,5 +9,15 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-    
+    const seen = Object.create(null)
+    for(let i = 0; i < nums.length; i++){
+        if (typeof nums[i] !== "number") throw Error(`In a array ${nums[i]} is not a number`);
+        if(seen[nums[i]] != true){
+            seen[nums[i]] = true
+        }
+        else return true
+    }
+    // console.log(seen)
+    return false
 };
+console.log(containsDuplicate([1,2,4,5,6,1, "1"]));
