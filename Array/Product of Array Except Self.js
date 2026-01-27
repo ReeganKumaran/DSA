@@ -10,5 +10,18 @@
  * @return {number[]}
  */
 var productExceptSelf = function(nums) {
-    
+    const answer = [];
+    let temp = 1; 
+    for(let i = 0; i < nums.length; i++){
+        answer[i] = temp;
+        temp *= nums[i];
+    }
+    temp = 1
+    for(let i = answer.length - 1; i >= 0; i--){
+        answer[i] *= temp;
+        temp *= nums[i];
+    }
+    return answer;
+
 };
+productExceptSelf([5,3,6,7])
