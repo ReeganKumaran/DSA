@@ -9,13 +9,11 @@
  * @param {number[]} prices
  * @return {number}
  */
-// [1, 2, 5, 3, 1, 5, 7, 8, 3] 
 var findMaxProfit = function(prices) {
     let maxProfit = 0;
     let minPrice = Infinity;
     
     for(let i = 0; i< prices.length; i++){
-        // console.log(prices[i])
         if(minPrice > prices[i]){
             minPrice = prices[i];
         }  
@@ -26,5 +24,4 @@ var findMaxProfit = function(prices) {
     }
     return maxProfit;
 };
-
 console.log(maxProfit([1, 2, 5, 3, 1, 5, 7, 8, 3]))
